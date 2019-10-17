@@ -3,6 +3,7 @@
 
 include:
  - oxidized
+ - oxidized.systemd
 
 oxidized_config:
   file.managed:
@@ -12,3 +13,5 @@ oxidized_config:
     - group: {{ oxidized.group }}
     - mode: 640
     - template: jinja
+    - watch_in:
+      - process: oxidized_systemd

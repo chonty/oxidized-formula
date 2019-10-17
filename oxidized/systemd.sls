@@ -1,3 +1,7 @@
+include:
+  - oxidized.routers
+  - oxidized.config
+
 oxidized_systemd:
   file.managed:
     - name: /lib/systemd/system/oxidized.service

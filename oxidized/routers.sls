@@ -2,6 +2,9 @@
 
 {% if oxidized.config.source.csv is defined %}
 
+include:
+  - oxidized.systemd
+
 oxidized_router.db:
   file.managed:
     - name: {{ oxidized.config.source.csv.file }}
@@ -10,5 +13,7 @@ oxidized_router.db:
     - group: {{ oxidized.general.group }}
     - mode: 640
     - template: jinja
+    - watch_in:
+      - service: oxidized_systemd
 
 {% endif %}
