@@ -6,7 +6,7 @@ include:
 
 oxidized_config:
   file.managed:
-    - name: {{ oxidized.home }}/config
+    - name: {{ oxidized.home }}/.config/oxidized/config
     - source: salt://oxidized/files/config
     - user: {{ oxidized.user }}
     - group: {{ oxidized.group }}
